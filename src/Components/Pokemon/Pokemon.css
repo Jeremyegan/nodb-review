@@ -19,4 +19,14 @@
     background-color: black;
     opacity: .7;
     border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.pokemon-name {
+    color: white;
+}
+
+.pokemon-pictures {
+    height: 200px;
 }
