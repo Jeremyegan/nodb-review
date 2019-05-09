@@ -14,6 +14,30 @@ module.exports = {
     getPokemon: (req, res) => {
         res.status(200).send(pokemon)
     },
+    addPokemon: (req, res) => {
+        pokemon.length
+        ? id = pokemon[pokemon.length -1].id + 1
+        : id = 0
+
+        const newPokemon = {
+            name: req.body.name,
+            image: req.body.image,
+            id
+        }
+        pokemon.push(newPokemon)
+        res.status(200).send(pokemon)
+    },
+    updatePokemon: (req, res) => {
+        const {id} = req.params;
+        const updatedPokemon = req.body;
+
+        let myPokemon = pokemon.find(element => {
+            return element.id === +id
+        })
+
+        myPokemon.name = updatedPokemon.name;
+        res.status(200).send(pokemon)
+    },
     deletePokemon: (req, res) => {
         const {id} = req.params;
         pokemon = pokemon.filter((pokemon) => pokemon.id !== +id)

@@ -20,13 +20,26 @@
     opacity: .7;
     border-radius: 20px;
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.poke-boxes {
+    height: 225px;
+    margin: 0px 5px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    
+    
 }
 
 .pokemon-name {
-    color: white;
+    color: Black;
+    margin: 0px;
 }
 
 .pokemon-pictures {
-    height: 200px;
+    height: 175px;
 }

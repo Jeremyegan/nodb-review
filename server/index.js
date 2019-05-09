@@ -3,9 +3,11 @@ const {json} = require('body-parser');
 const ctrl = require('./controller');
 const app = express();
 
-app.use(express(json()));
+app.use(json());
 
 app.get('/api/pokemon', ctrl.getPokemon);
+app.post('/api/pokemon', ctrl.addPokemon);
+app.put('/api/pokemon/:id', ctrl.updatePokemon);
 app.delete('/api/pokemon/:id', ctrl.deletePokemon);
 
 const server_port = 4040;
